@@ -109,7 +109,7 @@ function blowOut() {
   flame.style.opacity = "0";
 
   document.getElementById("cakeMsg").innerText =
-    "🎉 HAPPY BIRTHDAY LAMCY 💖";
+    "🎉 HAPPY BIRTHDAY TO YOU 💖";
 
   confetti({ particleCount: 300, spread: 150 });
 
