@@ -21,34 +21,17 @@
   <button onclick="start()">Tap to unlock your day</button>
 </div>
 
-<!-- SCREEN 2 -->
+<!-- SCREEN 2 (SLIDESHOW) -->
 <div id="screen2" class="screen">
   <h1>Memories with you 💫</h1>
 
-  <div class="gallery">
-    <div class="photo" onclick="showNote(0)">
-      <img src="img1.jpg">
-    </div>
-
-    <div class="photo" onclick="showNote(1)">
-      <img src="img2.jpg">
-    </div>
-
-    <div class="photo" onclick="showNote(2)">
-      <img src="img3.jpg">
-    </div>
-
-    <div class="photo" onclick="showNote(3)">
-      <img src="img4.jpg">
-    </div>
-
-    <div class="photo" onclick="showNote(4)">
-      <img src="img5.jpg">
-    </div>
+  <div class="slideshow">
+    <img class="slide active" src="img1.jpg">
+    <img class="slide" src="img2.jpg">
+    <img class="slide" src="img3.jpg">
+    <img class="slide" src="img4.jpg">
+    <img class="slide" src="img5.jpg">
   </div>
-
-  <!-- NOTE DISPLAY -->
-  <p id="note" class="note-box">Tap a photo to see the memory 💖</p>
 
   <button onclick="nextToJar()">Click for your second gift...</button>
 </div>
@@ -69,14 +52,15 @@
   <h1>🎂 Make a wish</h1>
   <p>Close your eyes, make a wish, and blow into your microphone 💨</p>
 
-  <div class="cake" onclick="blowOut()">
-  🎂
-  <div id="flame">🔥</div>
-</div>
+  <!-- FIXED CAKE -->
+  <div class="cake" onclick="blowOut()" style="cursor:pointer;">
+    🎂
+    <div id="flame">🔥</div>
+  </div>
 
-<p style="margin-top:10px; font-size:14px;">
-  (If mic doesn't work, tap the cake 🎂)
-</p>
+  <p style="margin-top:10px; font-size:14px;">
+    (If mic doesn't work, tap the cake 🎂)
+  </p>
 
   <h2 id="cakeMsg"></h2>
 </div>
