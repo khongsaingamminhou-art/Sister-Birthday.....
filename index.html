@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Lamcy 💖</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen active">
+  <h1>Property of Lamcy 💖</h1>
+  <p>Do not open until April 4</p>
+  <div class="gift-box">🎁</div>
+  <button onclick="start()">Tap to unlock your day</button>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="screen2" class="screen">
+  <h1>Memories with you 💫</h1>
+
+  <div class="gallery">
+    <div class="photo" onclick="showNote(0)">
+      <img src="img1.jpg">
+    </div>
+
+    <div class="photo" onclick="showNote(1)">
+      <img src="img2.jpg">
+    </div>
+
+    <div class="photo" onclick="showNote(2)">
+      <img src="img3.jpg">
+    </div>
+
+    <div class="photo" onclick="showNote(3)">
+      <img src="img4.jpg">
+    </div>
+
+    <div class="photo" onclick="showNote(4)">
+      <img src="img5.jpg">
+    </div>
+  </div>
+
+  <!-- NOTE DISPLAY -->
+  <p id="note" class="note-box">Tap a photo to see the memory 💖</p>
+
+  <button onclick="nextToJar()">Click for your second gift...</button>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="screen3" class="screen">
+  <h1>Click on the jar ✨</h1>
+  <div class="jar" onclick="popCompliment()">🏺</div>
+  <p id="compliment"></p>
+
+  <button id="finalBtn" onclick="goToCake()" style="display:none;">
+    Final surprise 🎂
+  </button>
+</div>
+
+<!-- SCREEN 4: CAKE -->
+<div id="screen4" class="screen">
+  <h1>🎂 Make a wish</h1>
+  <p>Close your eyes, make a wish, and blow into your microphone 💨</p>
+
+  <div class="cake">
+    🎂
+    <div id="flame">🔥</div>
+  </div>
+
+  <h2 id="cakeMsg"></h2>
+</div>
+
+<!-- SCREEN 5 FINAL -->
+<div id="screen5" class="screen">
+  <div class="card">
+    <h2>Last Message 💖</h2>
+
+    <div class="note-paper">
+      <p id="finalText"></p>
+    </div>
+
+    <div class="decorations">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="kitty">
+      <div class="flowers">🌸 🌼 🌸</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

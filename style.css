@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  text-align: center;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  overflow-x: hidden;
+}
+
+.screen {
+  display: none;
+  padding: 40px;
+}
+
+.active {
+  display: block;
+}
+
+/* button */
+button {
+  padding: 12px 25px;
+  border-radius: 20px;
+  background: #ff4da6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* gift */
+.gift-box {
+  font-size: 80px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-10px); }
+}
+
+/* 🎬 SLIDESHOW */
+.slideshow {
+  position: relative;
+  width: 80%;
+  max-width: 300px;
+  margin: 30px auto;
+  height: 200px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* jar */
+.jar {
+  font-size: 90px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.jar:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* cake */
+.cake {
+  font-size: 120px;
+  position: relative;
+}
+
+#flame {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+/* final card */
+.card {
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.note-paper {
+  background: #fff9c4;
+  padding: 20px;
+  border-radius: 10px;
+  transform: rotate(-2deg);
+  font-family: 'Comic Sans MS';
+}
+
+.kitty {
+  width: 80px;
+}
+
+.flowers {
+  font-size: 24px;
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .slideshow {
+    width: 90%;
+    height: 220px;
+  }
+
+  .cake {
+    transform: scale(0.8);
+  }
+
+  .note-paper {
+    width: 90%;
+    font-size: 16px;
+  }
+}
