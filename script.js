@@ -12,10 +12,12 @@ let slideIndex = 0;
 let slideshowStarted = false;
 
 function startSlideshow() {
-  if (slideshowStarted) return; // prevent multiple intervals
+  if (slideshowStarted) return;
   slideshowStarted = true;
 
   const slides = document.querySelectorAll(".slide");
+
+  if (slides.length === 0) return; // safety
 
   setInterval(() => {
     slides[slideIndex].classList.remove("active");
@@ -85,7 +87,7 @@ function startMic() {
 
         let volume = data.reduce((a, b) => a + b) / data.length;
 
-        if (volume > 50) {
+        if (volume > 60) { // 🔥 slightly higher for accuracy
           blowOut();
         }
 
@@ -93,6 +95,9 @@ function startMic() {
       }
 
       detect();
+    })
+    .catch(() => {
+      console.log("Microphone access denied ❌");
     });
 }
 
@@ -105,8 +110,10 @@ function blowOut() {
 
   let flame = document.getElementById("flame");
 
-  flame.style.transition = "0.5s";
-  flame.style.opacity = "0";
+  if (flame) {
+    flame.style.transition = "0.5s";
+    flame.style.opacity = "0";
+  }
 
   document.getElementById("cakeMsg").innerText =
     "🎉 HAPPY BIRTHDAY TO YOU 💖";
