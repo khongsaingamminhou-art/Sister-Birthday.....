@@ -95,14 +95,20 @@ function startMic() {
 /* prevent multiple blow */
 let blown = false;
 
+let blown = false;
+
 function blowOut() {
-  if (blown) return;
+  if (blown) return; // prevent repeat
   blown = true;
 
-  document.getElementById("flame").style.display = "none";
+  let flame = document.getElementById("flame");
+
+  // fade flame instead of instant remove
+  flame.style.transition = "0.5s";
+  flame.style.opacity = "0";
 
   document.getElementById("cakeMsg").innerText =
-    "🎉 HAPPY BATHDAY SISTORR 💖";
+    "🎉 HAPPY BIRTHDAY LAMCY 💖";
 
   confetti({ particleCount: 300, spread: 150 });
 
