@@ -4,13 +4,17 @@ function start() {
 
   confetti({ particleCount: 200, spread: 120 });
 
-  startSlideshow(); // 🎬 start slideshow
+  startSlideshow();
 }
 
 /* 🎬 SLIDESHOW */
 let slideIndex = 0;
+let slideshowStarted = false;
 
 function startSlideshow() {
+  if (slideshowStarted) return; // prevent multiple intervals
+  slideshowStarted = true;
+
   const slides = document.querySelectorAll(".slide");
 
   setInterval(() => {
@@ -19,7 +23,7 @@ function startSlideshow() {
     slideIndex = (slideIndex + 1) % slides.length;
 
     slides[slideIndex].classList.add("active");
-  }, 2500); // change speed here (ms)
+  }, 2500);
 }
 
 function nextToJar() {
@@ -95,15 +99,12 @@ function startMic() {
 /* prevent multiple blow */
 let blown = false;
 
-let blown = false;
-
 function blowOut() {
-  if (blown) return; // prevent repeat
+  if (blown) return;
   blown = true;
 
   let flame = document.getElementById("flame");
 
-  // fade flame instead of instant remove
   flame.style.transition = "0.5s";
   flame.style.opacity = "0";
 
